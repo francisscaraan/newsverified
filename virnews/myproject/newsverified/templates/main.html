@@ -1,0 +1,286 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NewsVerified</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <div class="nav-left">
+                <img src="{% static 'images/nvdark1.png' %}" class="logo">
+                <div class="search-box">
+                    <img src="{% static 'images/icons8-search-50.png' %}">
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Exclusives</a></li>
+                </ul>
+                <div class="nav-user-icon" onclick="settingsMenuToggle()">
+                    <img src="{% static 'images/icons8-menu-24.png' %}">
+                </div>
+            </div>
+
+            <div class="settings">
+                <div class="settings-in">
+                    <div class="user-profile">
+                        <img src="{% static 'images/pfp.jpg' %}">
+                        <div>
+                            <p>Thanasis Antetokounmpo</p>
+                            <a href="#">Manage Account</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="settings-item">
+                        <img src="{% static 'images/settings.png' %}" class="settings-icon">
+                        <a href="#">Settings and Privacy</a>
+                    </div>
+                    <div class="settings-item">
+                        <img src="{% static 'images/help.png' %}" class="settings-icon">
+                        <a href="#">Help and Support</a>
+                    </div>
+                    <div class="settings-item">
+                        <img src="{% static 'images/feedback (2).png' %}" class="settings-icon">
+                        <a href="#">Feedback</a>
+                    </div>
+                    <div class="settings-item">
+                        <img src="{% static 'images/logout.png' %}" class="settings-icon">
+                        <a href="{% url 'login' %}">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <!-- LEFT SIDEBAR -->
+            <div class="left-sidebar">
+                <div class="links">
+                    <a href="https://www.philstar.com/headlines/2024/05/19/2356323/indian-navy-ships-arrive-manila-goodwill-visit" class="latest"><p><b class="link-title">Indian Navy ships arrive in Manila for ‘goodwill visit'</b><br><span class="link-author">Philstar.com</span></p></a>
+                    <hr class="line-left">
+                    <a href="https://news.abs-cbn.com/sports/2024/5/19/ej-obiena-wins-gold-at-los-angeles-grand-prix-911" class="latest"><p><b class="link-title">EJ Obiena wins gold at Los Angeles Grand Prix</b><br><span class="link-author">ABS-CBN News</span></p></a>
+                    <hr class="line-left">
+                    <a href="https://www.gmanetwork.com/news/topstories/nation/907268/ph-may-file-new-case-if-china-detains-sea-trespassers-senators/story/" class="latest"><p><b class="link-title">PH may file new case if China detains sea 'trespassers' -senators</b><br><span class="link-author">GMA Integrated News</span></p></a>
+                    <hr class="line-left">
+                    <a href="https://www.rappler.com/philippines/group-says-atin-ito-civilian-mission-west-philippine-sea-major-victory-may-2024/" class="latest"><p><b class="link-title">Atin Ito coalition calls civilian mission in West Philippine Sea a ‘major victory’</b><br><span class="link-author">Rappler.com</span></p></a>
+                    <hr class="line-left">
+                    <a href="https://newsinfo.inquirer.net/1942209/grenade-attack-on-a-catholic-chapel-in-cotabato-city-injures-2-persons?utm_source=(direct)&utm_medium=gallery" class="latest"><p><b class="link-title">Grenade attack on a Catholic chapel in Cotabato City injures 2 persons</b><br><span class="link-author">INQUIRER.NET</span></p></a>
+                    <hr class="line-left">
+                    <a href="https://mb.com.ph/2024/5/19/ncaa-season-99-volleyball-finals-airs-on-gtv-this-sunday" class="latest"><p><b class="link-title">NCAA Season 99 Volleyball Finals airs on GTV this Sunday</b><br><span class="link-author">MANILA BULLETIN ENTERTAINMENT</span></p></a>
+                    <hr class="line-left">
+                    <a href="#">See more...</a>
+                </div>
+            </div>
+
+            <!-- NEWS FEED -->
+            <div class="news-feed">
+                <h1 class="feed-head">Home</h1>
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="{% static 'images/gma_logo.jpg' %}">
+                            <div>
+                                <p>GMA News</p>
+                                <small>May 17, 2024</small>
+                            </div>
+                        </div>
+                        <a href="#"><img src="{% static 'images/postmenu.png' %}"></a>
+                    </div>
+                    <p class="caption">China Coast Guard empowered to detain 'trespassers' in South China Sea —report<br> Read more: <a href="https://www.gmanetwork.com/news/topstories/nation/907082/china-eyes-arrest-of-civilians-in-south-china-sea-ph-coast-guard-unfazed/story/">gmanetwork.com</a></p>
+                    <img src="{% static 'images/gma_post.jpg' %}" class="post-img">
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div><img src="{% static 'images/like.png' %}">3.2k</div>
+                            <div><img src="{% static 'images/comment.png' %}">1.1k</div>
+                            <div><img src="{% static 'images/share.png' %}">891</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="{% static 'images/abscbn_logo.jpeg' %}">
+                            <div>
+                                <p>ABS-CBN News</p>
+                                <small>2 hours ago</small>
+                            </div>
+                        </div>
+                        <a href="#"><img src="{% static 'images/postmenu.png' %}"></a>
+                    </div>
+                    <p class="caption">Carlos Yulo adds 2 more golds to Asian Championships haul<br> Read more: <a href="https://news.abs-cbn.com/sports/2024/5/19/carlos-yulo-adds-2-more-golds-to-asian-championships-haul-2114?fbclid=IwZXh0bgNhZW0CMTEAAR3JDMl5R9NOriu04wXD2BL2qqtNnJqZl0eYOtkjoaGO-qoTdT06W8yW5_8_aem_AeNZV6MCWgkxvP9cqdXHgXoj3Tw5MPME0QntLKF-bzpYZbDCLR-RCDefcCIo5PkZeu6zP_F05wOGFlRq_A4KNIWm">abs-cbn.com</a></p>
+                    <img src="{% static 'images/abscbn_post.jpg' %}" class="post-img">
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div><img src="{% static 'images/like.png' %}">1.2k</div>
+                            <div><img src="{% static 'images/comment.png' %}">101</div>
+                            <div><img src="{% static 'images/share.png' %}">59</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="{% static 'images/MB_logo.jpg' %}">
+                            <div>
+                                <p>MANILA BULLETIN</p>
+                                <small>May 19, 2024</small>
+                            </div>
+                        </div>
+                        <a href="#"><img src="{% static 'images/postmenu.png' %}"></a>
+                    </div>
+                    <p class="caption">'Dangerous' heat indices expected in 38 areas on May 20<br> Read more: <a href="https://mb.com.ph/2024/5/15/dangerous-heat-indices-expected-in-38-areas-on-may-20?fbclid=IwZXh0bgNhZW0CMTEAAR0ssEmQ6g4Hdr_KrJiuPxtFxt3ER_s3dPpLbBUQnQRgkJ9qRPB1Bsg08gY_aem_AeOaZBjhyENDt_9Ypu4GwksV66i5TvogLCNLMRPypBBe-LZuSofNsNM5PFvV7z8Bb2U0okI4KUv36s812WTWAMIr">mb.com.ph</a></p>
+                    <img src="{% static 'images/mb_post.jpg' %}" class="post-img">
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div><img src="{% static 'images/like.png' %}">2.1k</div>
+                            <div><img src="{% static 'images/comment.png' %}">98</div>
+                            <div><img src="{% static 'images/share.png' %}">200</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="{% static 'images/onenews_logo.jpg' %}">
+                            <div>
+                                <p>One News</p>
+                                <small>May 19, 2024</small>
+                            </div>
+                        </div>
+                        <a href="#"><img src="{% static 'images/postmenu.png' %}"></a>
+                    </div>
+                    <p class="caption">Delisted Voters Urged To Register<br> Read more: <a href="https://www.onenews.ph/articles/delisted-voters-urged-to-register">onenews.ph</a></p>
+                    <img src="{% static 'images/one_post.jpg' %}" class="post-img">
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div><img src="{% static 'images/like.png' %}">564</div>
+                            <div><img src="{% static 'images/comment.png' %}">12</div>
+                            <div><img src="{% static 'images/share.png' %}">39</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="{% static 'images/philstar_logo.jpg' %}">
+                            <div>
+                                <p>Philippine Star</p>
+                                <small>May 20, 2024</small>
+                            </div>
+                        </div>
+                        <a href="#"><img src="{% static 'images/postmenu.png' %}"></a>
+                    </div>
+                    <p class="caption">Pinoys to continue fishing in Panatag<br> Read more: <a href="https://www.philstar.com/headlines/2024/05/20/2356522/pinoys-continue-fishing-panatag">philstar.com</a></p>
+                    <img src="{% static 'images/phil_post.jpg' %}" class="post-img">
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div><img src="{% static 'images/like.png' %}">5.1k</div>
+                            <div><img src="{% static 'images/comment.png' %}">211</div>
+                            <div><img src="{% static 'images/share.png' %}">399</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="{% static 'images/inq_logo.jpg' %}">
+                            <div>
+                                <p>INQUIRER.net</p>
+                                <small>May 19, 2024</small>
+                            </div>
+                        </div>
+                        <a href="#"><img src="{% static 'images/postmenu.png' %}"></a>
+                    </div>
+                    <p class="caption">Milk makers freeze prices for two months, or until July 10<br> Read more: <a href="https://newsinfo.inquirer.net/1942083/milk-makers-freeze-prices-for-two-months-or-until-july-10?utm_source=(direct)&utm_medium=gallery">inquirer.com</a></p>
+                    <img src="{% static 'images/inq_post.webp' %}" class="post-img">
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div><img src="{% static 'images/like.png' %}">107</div>
+                            <div><img src="{% static 'images/comment.png' %}">11</div>
+                            <div><img src="{% static 'images/share.png' %}">9</div>
+                        </div>
+                        <div class="post-profile-icon">
+        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="{% static 'images/abscbn_logo.jpeg' %}">
+                            <div>
+                                <p>ABS-CBN News</p>
+                                <small>2 hours ago</small>
+                            </div>
+                        </div>
+                        <a href="#"><img src="{% static 'images/postmenu.png' %}"></a>
+                    </div>
+                    <p class="caption">Escudero takes Senate helm after Zubiri resignation<br> Read more: <a href="https://news.abs-cbn.com/news/2024/5/20/escudero-takes-helm-of-senate-after-zubiri-resignation-1535">abs-cbn.com</a></p>
+                    <img src="{% static 'images/chiz_post.jpg' %}" class="post-img">
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div><img src="{% static 'images/like.png' %}">211</div>
+                            <div><img src="{% static 'images/comment.png' %}">11</div>
+                            <div><img src="{% static 'images/share.png' %}">2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDEBAR -->
+            <div class="right-sidebar">
+                <div class="sidebar-title">
+                    <h3>Following</h3>
+                    <a href="#">See all</a>
+                </div>
+                <hr class="line-right">
+                <div class="follow-list" style="margin-top: 20px;">
+                    <a href="https://news.abs-cbn.com"><img src="{% static 'images/abscbn_logo.jpeg' %}">ABS-CBN News</a>
+                </div>
+                <div class="follow-list">
+                    <a href="https://www.facebook.com/jessicasoho"><img src="{% static 'images/gmapa_logo.jpg' %}">GMA Public Affairs Jessica Soho</a>
+                </div>
+                <div class="follow-list">
+                    <a href="https://www.facebook.com/officialatomaraullo"><img src="{% static 'images/atom_logo.jpg' %}">Atom Araullo</a>
+                </div>
+                <div class="follow-list">
+                    <a href="https://www.facebook.com/KaraDavidOfficial"><img src="{% static 'images/kara_logo.jpg' %}">Kara David</a>
+                </div>
+                <div class="follow-list">
+                    <a href="https://mb.com.ph"><img src="{% static 'images/MB_logo.jpg' %}">MANILA BULLETIN</a>
+                </div>
+                <div class="follow-list">
+                    <a href="https://www.philstar.com"><img src="{% static 'images/philstar_logo.jpg' %}">Philstar</a>
+                </div>
+                <div class="follow-list">
+                    <a href="https://www.rappler.com"><img src="{% static 'images/rappler_logo.jpg' %}">Rappler</a>
+                </div>
+                <hr class="line-right">
+                <div class="follow-list" style="margin-top: 20px;">
+                    <a href="#"><img src="{% static 'images/save_icon.png' %}">Saved</a>
+                </div>
+                <div class="follow-list">
+                    <a href="#"><img src="{% static 'images/toprated_icon.png' %}">Top rated</a>
+                </div>
+            </div>
+        </div>
+        <script src="{% static 'script.js' %}"></script>
+    </body>
+</html>
